@@ -10,46 +10,55 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="/src/css/style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/src/css/style.css"> -->
 </head>
 <body>
     <form>
         <fieldset>
             <legend>DATOS DEL PROCESO</legend> 
-            <label for="jurisdiccion">Jurisdicción:</label>
-            <input type="text" id="jurisdiccion" name="jurisdiccion">
-            <label for="proceso">Tipo de Proceso</label>     
-            <input type="text" id="proceso" name="proceso">       
+                <label for="jurisdiccion">Jurisdicción:</label>
+                <input type="text" id="jurisdiccion" name="jurisdiccion">
+
+                <label for="proceso">Tipo de Proceso</label>     
+                <input type="text" id="proceso" name="proceso">
+
         </fieldset>
 
         <fieldset>
             <legend>DATOS DEL DEMANDANTE</legend>
-            <label for="nombreDte">Nmbre</label>
-            <input type="text" id="nombreDte" name="nomreDte">
-            <label for="idDte">Tipo de Identificación</label>
-                <select name="idDte" id="idDte">                
-                    <option>CC</option>
-                    <option>NIT</option>
-                </select>
-            <label for="idNumDte">Número de Id</label>
-            <input type="tel" id="idNumDte" name="idNumDte">
-            <label for="correoDte">Correo Electrónico</label>
-            <input type="email" id="correoDte" name="correoDte">
+                <label for="nombreDte">Nombre</label>
+                <input type="text" id="nombreDte" name="nomreDte">
+
+                <label for="idDte">Tipo de Identificación</label>
+                    <select name="idDte" id="idDte">                            
+                        <option>CC</option>
+                        <option>NIT</option>
+                    </select>
+
+                <label for="idNumDte">Número de Id</label>
+                <input type="tel" id="idNumDte" name="idNumDte">
+
+                <label for="correoDte">Correo Electrónico</label>
+                <input type="email" id="correoDte" name="correoDte">
         </fieldset>
 
         <fieldset>
             <legend>DATOS DEL DEMANDADO</legend>
-            <label for="nombreDdo">Nombre</label>
-            <input type="text" id="nombreDdo" name="nomreDdo">
-            <label for="idDdo">Tipo de Id</label>
-                <select name="idDdo" id="idDdo">                
-                    <option>CC</option>
-                    <option>NIT</option>
-                </select>
-            <label for="idNumDte">Número de Id</label>
-            <input type="tel" id="idNumDte" name="idNumDte">
-            <label for="correoDdo">Correo Electrónico</label>
-            <input type="email" id="correoDdo" name="correoDdo">
+                <label for="nombreDdo">Nombre</label>
+                <input type="text" id="nombreDdo" name="nomreDdo">
+
+                <label for="idDdo">Tipo de Id</label>
+                    <select name="idDdo" id="idDdo">                
+                        <option>CC</option>
+                        <option>NIT</option>
+                    </select>
+
+                <label for="idNumDdo">Número de Id</label>
+                <input type="tel" id="idNumDdo" name="idNumDdo">
+
+                <label for="correoDdo">Correo Electrónico</label>
+                <input type="email" id="correoDdo" name="correoDdo">
+                
         </fieldset> 
         <button type="send" onclick="Capturar()" id="sendButton">Enviar</button>
     </form>
