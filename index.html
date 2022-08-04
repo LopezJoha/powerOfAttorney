@@ -16,11 +16,17 @@
     <form>
         <fieldset>
             <legend>DATOS DEL PROCESO</legend> 
-                <label for="jurisdiccion">Jurisdicción:</label>
-                <input type="text" id="jurisdiccion" name="jurisdiccion">
+                <label for="jurisdiccion">Jurisdicción y Competencia</label>
+                <input type="text" id="jurisdiccion" name="jurisdiccion" placeholder="CIVIL MUNICIPAL">
 
                 <label for="proceso">Tipo de Proceso</label>     
-                <input type="text" id="proceso" name="proceso">
+                <input type="text" id="proceso" name="proceso" placeholder="VERBAL - VERBAL SUMARIO - EJECUTIVO">
+
+                <label for="proceso">Especialidad del Proceso</label>     
+                <input type="text" id="espProceso" name="espProceso" placeholder="DIVORCIO - PROPIEDAD INTELECTUAL  - SINGULAR">
+
+                <label for="ciudad">CIUDAD Y MUNICIPIO:</label>
+                <input type="text" id="ciudad" name="ciudad" placeholder="BOGOTA D.C.">
 
         </fieldset>
 
@@ -35,7 +41,7 @@
                         <option>NIT</option>
                     </select>
 
-                <label for="idNumDte">Número de Id</label>
+                <label for="idNumDte">Número de Identificación<label>
                 <input type="tel" id="idNumDte" name="idNumDte">
 
                 <label for="correoDte">Correo Electrónico</label>
@@ -45,26 +51,50 @@
         <fieldset>
             <legend>DATOS DEL DEMANDADO</legend>
                 <label for="nombreDdo">Nombre</label>
-                <input type="text" id="nombreDdo" name="nomreDdo">
+                <input type="text" id="nombreDdo" name="nombreDdo">
 
-                <label for="idDdo">Tipo de Id</label>
+                <label for="idDdo">Tipo de Identificación</label>
                     <select name="idDdo" id="idDdo">                
                         <option>CC</option>
                         <option>NIT</option>
                     </select>
 
-                <label for="idNumDdo">Número de Id</label>
+                <label for="idNumDdo">Número de Identificación</label>
                 <input type="tel" id="idNumDdo" name="idNumDdo">
 
                 <label for="correoDdo">Correo Electrónico</label>
-                <input type="email" id="correoDdo" name="correoDdo">
-                
+                <input type="email" id="correoDdo" name="correoDdo">                
         </fieldset> 
-        <button type="send" onclick="Capturar()" id="sendButton">Enviar</button>
-    </form>
-    <script src="src/js/script.js"></script>
-    <div id="mostrarDatos">
 
+        <fieldset>
+            <legend>DATOS DEL ABOGADO</legend>
+                <label for="nombreAbogado">Nombre</label>
+                <input type="text" id="nombreAbogado" name="nombreAbogado">
+
+                <label for="idAbogado">Tipo de Id</label>
+                    <select name="idAbogado" id="idAbogado">                
+                        <option>CC</option>
+                        <option>NIT</option>
+                    </select>  
+
+                <label for="idNumAbogado">Número de Id</label>
+                <input type="tel" id="idNumAbogado" name="idNumAbogado">
+
+                <label for="tarjetaProfesional">Tarjeta Profesional</label>
+                <input type="number" id="tarjetaProfesional" name="tarjetaProfesional">
+
+                <label for="correoAbogado">Correo Electrónico</label>
+                <input type="email" id="correoAbogado" name="correoAbogado">                
+        </fieldset>              
+    </form>
+    <div>
+        <button type="submit" onclick="Capturar()" id="sendButton">Crear</button>         
     </div>
+    
+    
+    <div id="mostrarDatos">
+    </div>
+
+    <script src="src/js/script.js"></script>
 </body>
 </html>
