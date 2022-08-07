@@ -1,3 +1,4 @@
+
 function Capturar(){
     Juzgado = document.getElementById('jurisdiccion').value;
     ciudad = document.getElementById('ciudad').value;    
@@ -21,51 +22,50 @@ function Capturar(){
     EmailAbogado = document.getElementById('correoAbogado').value
 
     poder = `<div class='poder__Wrapper'>
-    <p>JUEZ ${Juzgado = Juzgado.toUpperCase()} REPARTO </p>
+    <p><b>JUEZ ${Juzgado = Juzgado.toUpperCase()} REPARTO</b> </p>
     <p>${ciudad = ciudad.toUpperCase()}.</p>  
-    <p>E.&nbsp;&nbsp;S.&nbsp;&nbsp;D.</p>      
+    <p>E. &nbsp; S.&nbsp; D.</p>      
     <br>
-    <p>PROCESO: ${Proceso = Proceso.toUpperCase()}  ${EspecialidadProceso = EspecialidadProceso.toUpperCase()}</p>      
-    <p>DEMANDANTE: ${nameDemandante = nameDemandante.toUpperCase()}</p>
-    <p>IDENTIFICACION DEMANDANTE: ${tipoIdDte = tipoIdDte.toUpperCase()} No ${IdDemandante}</p>
-    <p>DEMANDADO: ${nameDemandado = nameDemandado.toUpperCase()}</p>
-    <p>IDENTIFICACION DEMANDADO: ${tipoIdDdo = tipoIdDdo.toUpperCase()} No ${IdDemandado}</p>   
-    <p>REFERENCIA: PODER</p> 
+    <p>PROCESO: <b>${Proceso = Proceso.toUpperCase()}  ${EspecialidadProceso = EspecialidadProceso.toUpperCase()}</b></p>      
+    <p>DEMANDANTE:<b>${nameDemandante = nameDemandante.toUpperCase()}</b></p>
+    <p>IDENTIFICACION DEMANDANTE: <b>{tipoIdDte = tipoIdDte.toUpperCase()} No ${IdDemandante}</b></p>
+    <p>DEMANDADO: <b>${nameDemandado = nameDemandado.toUpperCase()}</b></p>
+    <p>IDENTIFICACION DEMANDADO: <b>{tipoIdDdo = tipoIdDdo.toUpperCase()} No ${IdDemandado}</b></p>   
+    <p>REFERENCIA: <b>PODER</b></p> 
     <br>
 
-    <p>${nameDemandante}, mayor de edad, Identificado con ${tipoIdDte} No ${IdDemandante}, 
+    <p><b>${nameDemandante}</b>, mayor de edad, Identificado con <b>${tipoIdDte}</b> No <b>${IdDemandante}</b>, 
     con domicilio y residencia principal en la ${ciudad}, por medio del presente escrito 
     me permito manifestar a usted muy respetuosamente que confiero PODER ESPECIAL AMPLIO Y SUFICIENTE al Dr 
-    ${NombreAbogado = NombreAbogado.toUpperCase()}, Identificado con ${idAbogado = idAbogado.toUpperCase()} No ${idNumAbogado}, Abogado en ejercicio y portador
-    de la tarjeta profesional No ${tp} expedida por el Consejo Superior de la Judicatura, para que en mi nombre
-    y representación inicie, continue y lleve hasta su culminación PROCESO ${Proceso} ${EspecialidadProceso}.</p>
+    <b>${NombreAbogado = NombreAbogado.toUpperCase()}</b>, Identificado con <b>${idAbogado = idAbogado.toUpperCase()}</b>
+    No <b>${idNumAbogado}</b>, Abogado en ejercicio y portador de la tarjeta profesional No <b>${tp}</b> expedida por el Consejo Superior de la Judicatura, 
+    para que en mi nombre y representación inicie, continue y lleve hasta su culminación PROCESO <b>${Proceso}</b>  <b>${EspecialidadProceso}</b>.</p>
     <br>
     <p>Mi apoderado cuenta con las facultades inherentes para el ejercicio del presente poder tales como conciliar,
     sustituir, transigir, recibir, desistir, suscribir, reasumir, interponer los recursos de Ley, las descritas
     en los artículos 75 y 77 del Código General del Proceso.</p> 
     <br>
-    <p>Sírvase señor Juez, reconocerle personería adjetiva para actuar al Dr. ${NombreAbogado} en los términos y los fines aquí señalados.</p> 
+    <p>Sírvase señor Juez, reconocerle personería adjetiva para actuar al Dr. <b>${NombreAbogado}</b> en los términos y los fines aquí señalados.</p> 
     <br>
     Atentamente,      
     <br>
-    <p>${nameDemandante}</p>
-    <p>${tipoIdDte} No ${IdDemandante}</p>
-    <p>${EmailDte}</p>
+    <p><b>${nameDemandante}</b></p>
+    <p><b>${tipoIdDte}</b> No <b>${IdDemandante}</b></p>
+    <p><b>${EmailDte}</b></p>
     <br>    
     <p>Acepto,</p>  
     <br>
-    <p>${NombreAbogado}</p>
-    <p>${idAbogado} No ${idNumAbogado}</p>	
-    <p>${tp} del C.S. de la J.</p>  
-    <p>${Correo = document.getElementById('correoAbogado').value}</p> 
-    </div>`
-
-    
-    alert('Esta Funcionando');
+    <p><b>${NombreAbogado}</b></p>
+    <p><b>${idAbogado}</b> No ${idNumAbogado}</b></p>	
+    <p><b>${tp} del C.S. de la J.</p> </b> 
+    <p><b>${Correo = document.getElementById('correoAbogado').value}</b></p> 
+    </div>`    
+       
     return document.getElementById('mostrarDatos').innerHTML = poder;
-
+    
 }
 
 document.getElementById("sendButton").addEventListener("click", function(event){
     event.preventDefault()
+    document.getElementById('pdf').className = 'decargarShow'
 });

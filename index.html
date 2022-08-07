@@ -4,18 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poder</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="/styles.css">
+
+    <title>Poder</title>
 </head>
 <body>
-    <form>
+    <header >
+        <a href="#"><img src="" alt="" /></a>
+        <a href="#"><img src="" alt="" /></a>
+
+        <ul class="lista_Menu" id="ListaMenu"> 
+            <a href="#" class="item_Menu">
+                <div class="wrapper_Menu">
+                    <img src="/src/images/home.png" alt=""></img>
+                    <div class="description_Menu">Inicio</div>
+                </div>
+            </a>
+
+            <a href="#" class="item_Menu">
+                <div class="wrapper_Menu">
+                    <img src="/src/images/contacts.png" alt=""></img>
+                    <div class="description_Menu">Contactos</div>
+                </div>
+            </a>
+
+            <a href="#" class="item_Menu">
+                <div class="wrapper_Menu">
+                    <img src="/src/images/calendar.png" alt=""></img>
+                    <div class="description_Menu">Calendario</div>
+                </div>
+            </a>
+
+            <a href="#" class="item_Menu">
+                <div class="wrapper_Menu">
+                    <img src="/src/images/edit.png"></img>
+                    <div class="description_Menu">Crear Documento</div>
+                </div>
+            </a>
+
+            <a href="#" class="item_Menu">
+                <div class="wrapper_Menu">
+                    <img src="/src/images/toPdf.png"></img>
+                    <div class="description_Menu">Descargar en Pdf</div>
+                </div>
+            </a>
+
+            <a href="#" class="item_Menu">
+                <div class="wrapper_Menu">
+                    <img src="/src/images/settings.png" alt=""></img>
+                    <div class="description_Menu">Configuracion</div>
+                </div>
+            </a>
+        </ul>
+    </header>
+  
+    <form id="formPoder">
         <fieldset>
-            <legend>DATOS DEL PROCESO</legend> 
+            <legend>DATOS DEL PROCESO                
+            </legend> 
                 <label for="jurisdiccion">Jurisdicción y Competencia</label>
                 <input type="text" id="jurisdiccion" name="jurisdiccion" placeholder="CIVIL MUNICIPAL">
 
@@ -27,12 +78,11 @@
 
                 <label for="ciudad">CIUDAD Y MUNICIPIO:</label>
                 <input type="text" id="ciudad" name="ciudad" placeholder="BOGOTA D.C.">
-
         </fieldset>
 
         <fieldset>
             <legend>DATOS DEL DEMANDANTE</legend>
-                <label for="nombreDte">Nombre</label>
+                <label for="nombreDte">Nombre Completo</label>
                 <input type="text" id="nombreDte" name="nomreDte">
 
                 <label for="idDte">Tipo de Identificación</label>
@@ -50,7 +100,7 @@
 
         <fieldset>
             <legend>DATOS DEL DEMANDADO</legend>
-                <label for="nombreDdo">Nombre</label>
+                <label for="nombreDdo">Nombre Completo</label>
                 <input type="text" id="nombreDdo" name="nombreDdo">
 
                 <label for="idDdo">Tipo de Identificación</label>
@@ -85,16 +135,41 @@
 
                 <label for="correoAbogado">Correo Electrónico</label>
                 <input type="email" id="correoAbogado" name="correoAbogado">                
-        </fieldset>              
+        </fieldset>
+        <div>
+            <button type="submit" onclick="Capturar()" id="sendButton">Crear</button>         
+        </div>              
     </form>
-    <div>
-        <button type="submit" onclick="Capturar()" id="sendButton">Crear</button>         
-    </div>
     
+       
     
-    <div id="mostrarDatos">
-    </div>
+    <div id="mostrarDatos"></div>
 
+    <button id="pdf" class="descargarHide" onclick="pdfPoder()">Descargar Pdf</button>  
+   
+    
     <script src="src/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.js"></script>
+
+    <script> 
+
+        function pdfPoder(){
+            var doc = new jsPDF('p', 'pt', 'letter');
+            var margin = 10;
+            var scale = (doc.internal.pageSize.width - margin *2) / document.getElementById('mostrarDatos').scrollWidth;
+            doc.html(document.getElementById('mostrarDatos'), {
+                x: margin, 
+                y: margin, 
+                html2canvas :{
+                    scale: scale,
+                }, 
+                callback : function(doc){
+                    doc.output('dataurlnewwindow', {filename: 'porfin.pdf'})
+                }
+            });
+        }
+    </script>  
 </body>
 </html>
