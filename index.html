@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +14,9 @@
     <title>Poder</title>
 </head>
 <body>
+    <div>
+
+    </div>
     <header >
         <a href="#"><img src="" alt="" /></a>
         <a href="#"><img src="" alt="" /></a>
@@ -62,90 +65,108 @@
             </a>
         </ul>
     </header>
-  
-    <form id="formPoder">
-        <fieldset>
-            <legend>DATOS DEL PROCESO                
-            </legend> 
-                <label for="jurisdiccion">Jurisdicción y Competencia</label>
-                <input type="text" id="jurisdiccion" name="jurisdiccion" placeholder="CIVIL MUNICIPAL">
 
-                <label for="proceso">Tipo de Proceso</label>     
-                <input type="text" id="proceso" name="proceso" placeholder="VERBAL - VERBAL SUMARIO - EJECUTIVO">
+    <section id="page1">
+        <div class="page1__one">
+            <div class="content__page1">
+                <h1>Genera tus Poderes para tramites Judiciales de manera automática</h1>
+                <h2>¡Diligencia cada uno de los campos en el siguiente formulario y obtendras tu documento en minutos!</h2>
+            </div>
+            <div>
 
-                <label for="proceso">Especialidad del Proceso</label>     
-                <input type="text" id="espProceso" name="espProceso" placeholder="DIVORCIO - PROPIEDAD INTELECTUAL  - SINGULAR">
+            </div>  
 
-                <label for="ciudad">CIUDAD Y MUNICIPIO:</label>
-                <input type="text" id="ciudad" name="ciudad" placeholder="BOGOTA D.C.">
-        </fieldset>
+        </div>
 
-        <fieldset>
-            <legend>DATOS DEL DEMANDANTE</legend>
-                <label for="nombreDte">Nombre Completo</label>
-                <input type="text" id="nombreDte" name="nomreDte">
+        <div class="page1__two">
+            <h2>Realiza tu primer documento Gratis aquí: </h2>
+            <div class="content__page2">
+                <form id="formPoder">
+                    <fieldset>
+                        <legend>DATOS DEL PROCESO                
+                        </legend> 
+                            <label for="jurisdiccion">Jurisdicción y Competencia</label>
+                            <input type="text" id="jurisdiccion" name="jurisdiccion" placeholder="CIVIL MUNICIPAL">
+            
+                            <label for="proceso">Tipo de Proceso</label>     
+                            <input type="text" id="proceso" name="proceso" placeholder="VERBAL - VERBAL SUMARIO - EJECUTIVO">
+            
+                            <label for="proceso">Especialidad del Proceso</label>     
+                            <input type="text" id="espProceso" name="espProceso" placeholder="DIVORCIO - PROPIEDAD INTELECTUAL  - SINGULAR">
+            
+                            <label for="ciudad">CIUDAD Y MUNICIPIO:</label>
+                            <input type="text" id="ciudad" name="ciudad" placeholder="BOGOTA D.C.">
+                    </fieldset>
+            
+                    <fieldset>
+                        <legend>DATOS DEL DEMANDANTE</legend>
+                            <label for="nombreDte">Nombre Completo</label>
+                            <input type="text" id="nombreDte" name="nomreDte">
+            
+                            <label for="idDte">Tipo de Identificación</label>
+                                <select name="idDte" id="idDte">                            
+                                    <option>CC</option>
+                                    <option>NIT</option>
+                                </select>
+            
+                            <label for="idNumDte">Número de Identificación<label>
+                            <input type="tel" id="idNumDte" name="idNumDte">
+            
+                            <label for="correoDte">Correo Electrónico</label>
+                            <input type="email" id="correoDte" name="correoDte">
+                    </fieldset>
+            
+                    <fieldset>
+                        <legend>DATOS DEL DEMANDADO</legend>
+                            <label for="nombreDdo">Nombre Completo</label>
+                            <input type="text" id="nombreDdo" name="nombreDdo">
+            
+                            <label for="idDdo">Tipo de Identificación</label>
+                                <select name="idDdo" id="idDdo">                
+                                    <option>CC</option>
+                                    <option>NIT</option>
+                                </select>
+            
+                            <label for="idNumDdo">Número de Identificación</label>
+                            <input type="tel" id="idNumDdo" name="idNumDdo">
+            
+                            <label for="correoDdo">Correo Electrónico</label>
+                            <input type="email" id="correoDdo" name="correoDdo">                
+                    </fieldset> 
+            
+                    <fieldset>
+                        <legend>DATOS DEL ABOGADO</legend>
+                            <label for="nombreAbogado">Nombre</label>
+                            <input type="text" id="nombreAbogado" name="nombreAbogado">
+            
+                            <label for="idAbogado">Tipo de Id</label>
+                                <select name="idAbogado" id="idAbogado">                
+                                    <option>CC</option>
+                                    <option>NIT</option>
+                                </select>  
+            
+                            <label for="idNumAbogado">Número de Id</label>
+                            <input type="tel" id="idNumAbogado" name="idNumAbogado">
+            
+                            <label for="tarjetaProfesional">Tarjeta Profesional</label>
+                            <input type="number" id="tarjetaProfesional" name="tarjetaProfesional">
+            
+                            <label for="correoAbogado">Correo Electrónico</label>
+                            <input type="email" id="correoAbogado" name="correoAbogado">                
+                    </fieldset>
+                    <div style="gap: 10px;">
+                        <button type="submit" onclick="Capturar()" id="sendButton">Vista Previa</button>
+                        <button id="pdf" class="descargarHide" onclick="pdfPoder()">Descargar Pdf</button>          
+                    </div>              
+                </form>
+                
+            </div>
 
-                <label for="idDte">Tipo de Identificación</label>
-                    <select name="idDte" id="idDte">                            
-                        <option>CC</option>
-                        <option>NIT</option>
-                    </select>
-
-                <label for="idNumDte">Número de Identificación<label>
-                <input type="tel" id="idNumDte" name="idNumDte">
-
-                <label for="correoDte">Correo Electrónico</label>
-                <input type="email" id="correoDte" name="correoDte">
-        </fieldset>
-
-        <fieldset>
-            <legend>DATOS DEL DEMANDADO</legend>
-                <label for="nombreDdo">Nombre Completo</label>
-                <input type="text" id="nombreDdo" name="nombreDdo">
-
-                <label for="idDdo">Tipo de Identificación</label>
-                    <select name="idDdo" id="idDdo">                
-                        <option>CC</option>
-                        <option>NIT</option>
-                    </select>
-
-                <label for="idNumDdo">Número de Identificación</label>
-                <input type="tel" id="idNumDdo" name="idNumDdo">
-
-                <label for="correoDdo">Correo Electrónico</label>
-                <input type="email" id="correoDdo" name="correoDdo">                
-        </fieldset> 
-
-        <fieldset>
-            <legend>DATOS DEL ABOGADO</legend>
-                <label for="nombreAbogado">Nombre</label>
-                <input type="text" id="nombreAbogado" name="nombreAbogado">
-
-                <label for="idAbogado">Tipo de Id</label>
-                    <select name="idAbogado" id="idAbogado">                
-                        <option>CC</option>
-                        <option>NIT</option>
-                    </select>  
-
-                <label for="idNumAbogado">Número de Id</label>
-                <input type="tel" id="idNumAbogado" name="idNumAbogado">
-
-                <label for="tarjetaProfesional">Tarjeta Profesional</label>
-                <input type="number" id="tarjetaProfesional" name="tarjetaProfesional">
-
-                <label for="correoAbogado">Correo Electrónico</label>
-                <input type="email" id="correoAbogado" name="correoAbogado">                
-        </fieldset>
-        <div>
-            <button type="submit" onclick="Capturar()" id="sendButton">Crear</button>         
-        </div>              
-    </form>
-    
-       
-    
+        </div>
+    </section>
     <div id="mostrarDatos"></div>
 
-    <button id="pdf" class="descargarHide" onclick="pdfPoder()">Descargar Pdf</button>  
+    
    
     
     <script src="src/js/script.js"></script>
