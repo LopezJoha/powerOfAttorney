@@ -28,9 +28,9 @@ function Capturar(){
     <br>
     <p>PROCESO: <b>${Proceso = Proceso.toUpperCase()}  ${EspecialidadProceso = EspecialidadProceso.toUpperCase()}</b></p>      
     <p>DEMANDANTE:<b>${nameDemandante = nameDemandante.toUpperCase()}</b></p>
-    <p>IDENTIFICACION DEMANDANTE: <b>{tipoIdDte = tipoIdDte.toUpperCase()} No ${IdDemandante}</b></p>
+    <p>IDENTIFICACION DEMANDANTE: <b>${tipoIdDte = tipoIdDte.toUpperCase()} No ${IdDemandante}</b></p>
     <p>DEMANDADO: <b>${nameDemandado = nameDemandado.toUpperCase()}</b></p>
-    <p>IDENTIFICACION DEMANDADO: <b>{tipoIdDdo = tipoIdDdo.toUpperCase()} No ${IdDemandado}</b></p>   
+    <p>IDENTIFICACION DEMANDADO: <b>${tipoIdDdo = tipoIdDdo.toUpperCase()} No ${IdDemandado}</b></p>   
     <p>REFERENCIA: <b>PODER</b></p> 
     <br>
 
@@ -62,10 +62,131 @@ function Capturar(){
     </div>`    
        
     return document.getElementById('mostrarDatos').innerHTML = poder;
-    
 }
 
 document.getElementById("sendButton").addEventListener("click", function(event){
     event.preventDefault()
     document.getElementById('pdf').className = 'decargarShow'
 });
+
+// document.getElementById('jurisdiccion').onchange = function(){
+//     myFunction(); 
+// }
+// 
+// function myFunction(){
+//     let dato = document.getElementById('jurisdiccion');
+//     dato.value = dato.value.toUpperCase();
+//     console.log('On Change')
+//   
+// }
+
+const expresiones = {
+	texto: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	id: /^\d{6,10}$/, 
+    tp: /^\d{3,6}$/ , 
+    vacio : /^[^]+$/
+}
+
+const formulario = document.getElementById('formPoder');
+const inputs = document.querySelectorAll('#formPoder input');
+
+const validarCampo = (expresion, input, idgrupo) => {
+    if(expresion.test(input.value)){
+        console.log(input.value) 
+        document.getElementById(input.id).classList.add('InputCorrect')                         
+        document.getElementById(input.id).classList.remove('InputWrong')        
+        document.querySelector(`#${idgrupo} .wrongText`).classList.remove('wrongText-activo');
+   
+    } else {
+        document.getElementById(input.id).classList.add('InputWrong')
+        document.querySelector(`#${idgrupo} .wrongText`).classList.add('wrongText-activo');
+    }
+}
+
+const validarFormulario = (e) => {
+    switch (e.target.name) {
+        case "jurisdiccion":
+            idgrupo="grupoJuris" 
+            validarCampo(expresiones.texto, e.target, idgrupo)       
+        break;   
+        
+        case "proceso" : 
+            idgrupo="grupoProceso"
+            validarCampo(expresiones.texto, e.target, idgrupo)  
+        break;    
+        
+        case "espProceso" : 
+            idgrupo="grupoespProceso"
+            validarCampo(expresiones.texto, e.target, idgrupo)  
+        break;
+        
+        case "ciudad" : 
+            idgrupo="grupociudad"
+            validarCampo(expresiones.texto, e.target, idgrupo)  
+        break;
+        
+        case "nombreDte" :
+            idgrupo="gruponombreDte"
+            validarCampo(expresiones.texto, e.target, idgrupo)  
+        break;    
+        
+        case "idNumDte" :
+            idgrupo="grupoidNumDte"
+            validarCampo(expresiones.id, e.target, idgrupo)  
+        break;
+        
+        case "correoDte" : 
+            idgrupo="grupocorreoDte"
+            validarCampo(expresiones.correo, e.target, idgrupo)  
+        break;    
+        
+        case "nombreDdo" : 
+            idgrupo="gruponombreDdo"
+            validarCampo(expresiones.texto, e.target, idgrupo)  
+        break;
+        
+        case "idNumDdo" : 
+            idgrupo="grupoidNumDdo"
+            validarCampo(expresiones.id, e.target, idgrupo)  
+        break;
+        
+        case "correoDdo" :
+            idgrupo="grupocorreoDdo"
+            validarCampo(expresiones.correo, e.target, idgrupo)   
+        break;    
+        
+        case "nombreAbogado" :
+            idgrupo="gruponombreAbogado"
+            validarCampo(expresiones.texto, e.target, idgrupo)  
+        break;        
+             
+        case "idNumAbogado" :
+            idgrupo="grupoidNumAbogado"
+            validarCampo(expresiones.id, e.target, idgrupo)  
+        break;
+        
+        case "tarjetaProfesional" : 
+            idgrupo="grupoTP"
+            validarCampo(expresiones.tp, e.target, idgrupo)  
+        break;
+        
+        case "correoAbogado" :
+            idgrupo="grupocorreoAbogado"
+            validarCampo(expresiones.correo, e.target, idgrupo)   
+        break;
+    }     
+}
+
+inputs.forEach((input) =>{ 
+    input.addEventListener('keyup', validarFormulario);
+    input.addEventListener('blur', validarFormulario);       
+});
+
+
+
+formulario.addEventListener('submit', (event)=>{
+    event.preventDefault();
+});
+
+

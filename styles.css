@@ -26,7 +26,6 @@
     --tradewind-700: #246161;
     --tradewind-800: #214e4e;
     --tradewind-900: #1f4142;
-
   }
   
   body {    
@@ -70,8 +69,7 @@
     font-size: 20px;
     padding-left: 13px;
     position: relative;
-    color: var(--tradewind-900);   
-       
+    color: var(--tradewind-900);          
   }
 
   .lista_Menu:hover {
@@ -103,7 +101,7 @@
     padding-right: 10px;
     margin-left: 21px;
     overflow: hidden;
-}
+  }
 
   .wrapper_Menu img {
     width: 30px;
@@ -119,6 +117,8 @@
     margin: auto;
     display: flex;
     padding-left: calc(4.1rem + 8em);    
+    justify-content: space-around;
+    gap: 50px;
   }
 
   /* flex: flex-grow 1 flex-shrink flex-basis 480px|auto|initial|inherit; */
@@ -134,15 +134,14 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-     
+    align-items: center;     
   }
 
   h1 {
     font-size: 40px;
     color: var(--tradewind-700); 
     line-height: 40px;
-    text-align: center;    
+    text-align: center;   
   }
 
   h2 {
@@ -160,19 +159,20 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex: 1 2 50%;
-    
+    flex: 1 2 50%;    
   }
 
   .content__page2 {    
     overflow-y: scroll;
-    box-shadow: 3px 3px 5px var(--tradewind-800), -2px -2px 5px var(--tradewind-800);
+    box-shadow: 3px 3px 5px var(--tradewind-800), -3px -3px 5px var(--tradewind-800);
     border-radius: 10px;
+    padding: 15px;
+    margin: auto;
   }
 
-  .content__page2::-webkit-scrollbar{
+  .content__page2::-webkit-scrollbar {
     -webkit-appearance: none;
-}
+  }
   
   form {
     max-width: 600px;
@@ -199,10 +199,12 @@
     margin-bottom: 10px;
     color: var(--tradewind-900);
   }
+  
 
   label {
+    margin-top: 20px;
     padding-bottom: 5px;
-    color: var(--tradewind-900);
+    color: var(--tradewind-800);
   }
 
   input[type="text"],
@@ -217,17 +219,18 @@
   input[type="url"],
   textarea,
   select, 
-  option {
+  option
+  {
     background-color: var(--tradewind-50);
     border-radius: 5px;
-    border: none;
+    border: .1px solid var(--tradewind-200);
     font-size: 16px;
     outline: 0;
     padding: 15px;
     width: 100%;
     color: var(--tradewind-800);
     box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-    margin-bottom: 30px;
+    
   }
 
   select {
@@ -248,8 +251,44 @@
   input[type="url"]::placeholder,
   textarea::placeholder,
   select::placeholder, 
-  option::placeholder{
+  option::placeholder
+  {
     color: var(--tradewind-200);
+  }
+
+  .Input:focus {
+    border: solid 2px var(--tradewind-400);
+    box-shadow: 1.5px 1.5px 2.5px var(--tradewind-200), -1.5px -1.5px 2.5px var(--tradewind-200);
+  }
+
+  .InputCorrect:focus {
+    border: solid 2px green;
+    box-shadow: 1.5px 1.5px 2.5px lightgreen, -1.5px -1.5px 2.5px lightgreen;
+  }
+
+  .InputWrong:focus {
+    border: solid 2px red;
+    box-shadow: 1.5px 1.5px 2.5px lightcoral, -1.5px -1.5px 2.5px lightcoral;
+  }
+
+/* ESTILOS DE LOS GRUPOS */
+  #grupoJuris,
+  #grupoProceso,
+  #grupoespProceso,
+  #grupociudad,
+  #gruponombreDte,
+  #grupoidNumDte,
+  #grupocorreoDte,
+  #gruponombreDdo,
+  #grupoidNumDdo,
+  #grupocorreoDdo,
+  #gruponombreAbogado,
+  #grupoidNumAbogado,
+  #grupoTP,
+  #grupocorreoAbogado
+  {
+    display: flex;
+    flex-direction: column; 
   }
 
   button {    
@@ -280,21 +319,35 @@
 }
 
 .poder__Wrapper {
-  display: flex;
-  flex-direction: column;
-  text-align: justify;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
 }
 
 
-.poder__Wrapper {
-  width: 85vw; 
-  height: 100%;
-  color: black;
-  padding: 10px;
-}
+ .poder__Wrapper {
+    width: 85vw; 
+    height: 100%;
+    color: black;
+    padding: 10px;
+  }
+
+
+  .wrongText {
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+    
+  }
   
-  @media only screen and (max-width: 800px) {
-
+  .wrongText-activo {
+    font-size: 12px;
+    margin-bottom: 0;
+    display:block;
+    color: lightsalmon;
+  }
+  
+ @media only screen and (max-width: 800px) {
     form {
       max-width: 480px;
       display: flex;
@@ -305,6 +358,8 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-    }
-  
+      justify-content: space-around;
+      gap: 50px;
+    }  
   }
+

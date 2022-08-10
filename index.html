@@ -73,90 +73,126 @@
                 <h2>¡Diligencia cada uno de los campos en el siguiente formulario y obtendras tu documento en minutos!</h2>
             </div>
             <div>
-
-            </div>  
-
+            </div> 
         </div>
 
         <div class="page1__two">
-            <h2>Realiza tu primer documento Gratis aquí: </h2>
+            <h2>Realiza tu primer documento Gratis aquí:</h2>
             <div class="content__page2">
                 <form id="formPoder">
-                    <fieldset>
-                        <legend>DATOS DEL PROCESO                
-                        </legend> 
-                            <label for="jurisdiccion">Jurisdicción y Competencia</label>
-                            <input type="text" id="jurisdiccion" name="jurisdiccion" placeholder="CIVIL MUNICIPAL">
-            
+                    <fieldset>                   
+                        <legend>DATOS DEL PROCESO</legend>                    
+                        <div id="grupoJuris">
+                            <label for="jurisdiccion" class="formulario__label">Jurisdicción y Competencia</label>                                               
+                            <input type="text" id="jurisdiccion" name="jurisdiccion" placeholder="CIVIL MUNICIPAL" class="Input">
+                            <p id="primero" class="wrongText">Este campo solo puede contener letras y espacios</p>                            
+                        </div>
+
+                        <div id="grupoProceso">
                             <label for="proceso">Tipo de Proceso</label>     
-                            <input type="text" id="proceso" name="proceso" placeholder="VERBAL - VERBAL SUMARIO - EJECUTIVO">
-            
-                            <label for="proceso">Especialidad del Proceso</label>     
-                            <input type="text" id="espProceso" name="espProceso" placeholder="DIVORCIO - PROPIEDAD INTELECTUAL  - SINGULAR">
-            
-                            <label for="ciudad">CIUDAD Y MUNICIPIO:</label>
-                            <input type="text" id="ciudad" name="ciudad" placeholder="BOGOTA D.C.">
+                            <input type="text" id="proceso" name="proceso" placeholder="VERBAL - VERBAL SUMARIO - EJECUTIVO" class="Input">
+                            <p class="wrongText">Este campo solo puede contener letras y espacios</p>
+                        </div>
+                        <div id="grupoespProceso">
+                            <label for="espProceso">Especialidad del Proceso</label>     
+                            <input type="text" id="espProceso" name="espProceso" placeholder="DIVORCIO - PROPIEDAD INTELECTUAL  - SINGULAR" class="Input">
+                            <p class="wrongText">Este campo solo puede contener letras y espacios</p>
+                        </div>
+                        <div id="grupociudad">
+                            <label for="ciudad">Ciudad Y Municipio:</label>
+                            <input type="text" id="ciudad" name="ciudad" placeholder="BOGOTA D.C." class="Input">
+                            <p class="wrongText">Este campo solo puede contener letras y espacios</p>
+                        </div>
                     </fieldset>
             
                     <fieldset>
                         <legend>DATOS DEL DEMANDANTE</legend>
+                        <div id="gruponombreDte">
                             <label for="nombreDte">Nombre Completo</label>
-                            <input type="text" id="nombreDte" name="nomreDte">
-            
-                            <label for="idDte">Tipo de Identificación</label>
-                                <select name="idDte" id="idDte">                            
-                                    <option>CC</option>
-                                    <option>NIT</option>
-                                </select>
-            
-                            <label for="idNumDte">Número de Identificación<label>
-                            <input type="tel" id="idNumDte" name="idNumDte">
-            
+                            <input type="text" id="nombreDte" name="nombreDte" class="Input">
+                            <p class="wrongText">El nombre solo puede contener letras y espacios</p>
+                        </div>
+                        <!-- NO DIV -->
+                        <label for="idDte">Tipo de Identificación</label>
+                            <select name="idDte" id="idDte">                            
+                                <option value="CC" selected>CC</option>
+                                <option value="NIT">NIT</option>
+                            </select>
+                        
+                        <div id="grupoidNumDte">
+                            <label for="idNumDte">Número de Identificación</label>
+                            <input type="tel" id="idNumDte" name="idNumDte" class="Input">
+                            <p class="wrongText">El número de identificación deberá contener como mínimo 6 números</p>
+                        </div>
+
+                        <div id="grupocorreoDte">
                             <label for="correoDte">Correo Electrónico</label>
-                            <input type="email" id="correoDte" name="correoDte">
-                    </fieldset>
-            
+                            <input type="email" id="correoDte" name="correoDte" class="Input">
+                            <p class="wrongText">El correo solo puede contener letras, números, puntos, guiones y guion bajo.</p>
+                        </div>
+                    </fieldset>            
+                    
                     <fieldset>
                         <legend>DATOS DEL DEMANDADO</legend>
+                        <div id="gruponombreDdo">
                             <label for="nombreDdo">Nombre Completo</label>
-                            <input type="text" id="nombreDdo" name="nombreDdo">
-            
-                            <label for="idDdo">Tipo de Identificación</label>
-                                <select name="idDdo" id="idDdo">                
-                                    <option>CC</option>
-                                    <option>NIT</option>
-                                </select>
-            
+                            <input type="text" id="nombreDdo" name="nombreDdo" class="Input">
+                            <p class="wrongText">El nombre solo puede contener letras y espacios</p>
+                        </div>
+                        <!-- NO DIV -->
+                        <label for="idDdo">Tipo de Identificación</label>
+                            <select name="idDdo" id="idDdo">                
+                                <option value="CC" selected>CC</option>
+                                <option value="NIT">NIT</option>
+                            </select>
+                        
+                        <div id="grupoidNumDdo">
                             <label for="idNumDdo">Número de Identificación</label>
-                            <input type="tel" id="idNumDdo" name="idNumDdo">
-            
+                            <input type="tel" id="idNumDdo" name="idNumDdo" class="Input">
+                            <p class="wrongText">El número de identificación deberá contener como mínimo 6 números</p>
+                        </div>
+                        <div id="grupocorreoDdo">
                             <label for="correoDdo">Correo Electrónico</label>
-                            <input type="email" id="correoDdo" name="correoDdo">                
+                            <input type="email" id="correoDdo" name="correoDdo" class="Input">
+                            <p class="wrongText">El correo solo puede contener letras, números, puntos, guiones y guion bajo.</p>                
+                        </div>
                     </fieldset> 
             
                     <fieldset>
                         <legend>DATOS DEL ABOGADO</legend>
+                        <div id="gruponombreAbogado">
                             <label for="nombreAbogado">Nombre</label>
-                            <input type="text" id="nombreAbogado" name="nombreAbogado">
-            
-                            <label for="idAbogado">Tipo de Id</label>
-                                <select name="idAbogado" id="idAbogado">                
-                                    <option>CC</option>
-                                    <option>NIT</option>
-                                </select>  
-            
+                            <input type="text" id="nombreAbogado" name="nombreAbogado" class="Input">
+                            <p class="wrongText">El nombre solo puede contener letras y espacios</p>
+                        </div>
+                        <!-- NO DIV -->
+                        <label for="idAbogado">Tipo de Id</label>
+                            <select name="idAbogado" id="idAbogado">                
+                                <option value="CC" selected>CC</option>
+                                <option value="NIT">NIT</option>
+                            </select>  
+                        <div id="grupoidNumAbogado">
                             <label for="idNumAbogado">Número de Id</label>
-                            <input type="tel" id="idNumAbogado" name="idNumAbogado">
-            
+                            <input type="tel" id="idNumAbogado" name="idNumAbogado" class="Input">
+                            <p class="wrongText">El número de identificación deberá contener como mínimo 6 números</p>
+                        </div>
+
+                        <div id="grupoTP">
                             <label for="tarjetaProfesional">Tarjeta Profesional</label>
-                            <input type="number" id="tarjetaProfesional" name="tarjetaProfesional">
-            
+                            <input type="tel" id="tarjetaProfesional" name="tarjetaProfesional" class="Input">
+                            <p class="wrongText">La tarjeta profesional tiene que ser de 6 dígitos y solo puede contener números</p>
+                        </div>
+                        
+                        <div id="grupocorreoAbogado">
                             <label for="correoAbogado">Correo Electrónico</label>
-                            <input type="email" id="correoAbogado" name="correoAbogado">                
+                            <input type="email" id="correoAbogado" name="correoAbogado" class="Input">
+                            <p class="wrongText">El correo solo puede contener letras, números, puntos, guiones y guion bajo.</p>
+                        </div>                
                     </fieldset>
+
                     <div style="gap: 10px;">
                         <button type="submit" onclick="Capturar()" id="sendButton">Vista Previa</button>
-                        <button id="pdf" class="descargarHide" onclick="pdfPoder()">Descargar Pdf</button>          
+                        <button type="" id="pdf" class="descargarHide" onclick="pdfPoder()">Descargar Pdf</button>          
                     </div>              
                 </form>
                 
@@ -164,17 +200,18 @@
 
         </div>
     </section>
-    <div id="mostrarDatos"></div>
+    <div id="mostrarDatos">
 
+    </div>
     
-   
+  
     
     <script src="src/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.js"></script>
 
-    <script> 
+    <script>
 
         function pdfPoder(){
             var doc = new jsPDF('p', 'pt', 'letter');
