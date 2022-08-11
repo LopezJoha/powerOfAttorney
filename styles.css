@@ -108,7 +108,7 @@
     height: 30px;
     display: inline-block;
     line-height: 1em;
-    flex-shrink: 0;    
+    margin-right: 20px;   
   }
   
   #page1 {
@@ -117,8 +117,8 @@
     margin: auto;
     display: flex;
     padding-left: calc(4.1rem + 8em);    
-    justify-content: space-around;
-    gap: 50px;
+    justify-content: space-evenly;
+    gap: 10px;
   }
 
   /* flex: flex-grow 1 flex-shrink flex-basis 480px|auto|initial|inherit; */
@@ -139,14 +139,14 @@
 
   h1 {
     font-size: 40px;
-    color: var(--tradewind-700); 
-    line-height: 40px;
     text-align: center;   
+    color: var(--tradewind-700); 
+    line-height: 40px;    
   }
 
   h2 {
-    text-align: justify; 
     font-size: 22px;
+    text-align: justify;     
     line-height: 27px;
     font-weight: 300;
     color: var(--tradewind-900);
@@ -171,7 +171,7 @@
   }
 
   .content__page2::-webkit-scrollbar {
-    -webkit-appearance: none;
+    -webkit-appearance:scroll;
   }
   
   form {
@@ -234,9 +234,25 @@
   }
 
   select {
-    padding: 6px;
+    padding: 5px;
     height: 32px;
     border-radius: 2px;
+  }
+
+  .selectCorrect {
+    padding: 5px;
+    height: 32px;
+    border-radius: 2px;
+    border: solid 2px green;
+    box-shadow: 1.5px 1.5px 2.5px lightgreen, -1.5px -1.5px 2.5px lightgreen;    
+  }
+
+  .selectWrong {
+    padding: 5px;
+    height: 32px;
+    border-radius: 2px;
+    border: solid 2px red;
+    box-shadow: 1.5px 1.5px 2.5px lightcoral, -1.5px -1.5px 2.5px lightcoral;    
   }
 
   input[type="text"]::placeholder,
@@ -291,11 +307,11 @@
     flex-direction: column; 
   }
 
-  button {    
-    padding: 19px 39px 18px 39px;
+  button, #sendButton, #pdf{    
+    padding: 10px;
     color: #FFF;
     background-color: var(--tradewind-600);
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
     font-style: normal;
     font-weight: 500;
@@ -308,6 +324,14 @@
     cursor: pointer;
   }
 
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
   button:hover{
     background-color: var(--tradewind-400);
     border: 1px solid var(--tradewind-400);
@@ -318,26 +342,22 @@
     justify-content: center;
 }
 
-.poder__Wrapper {
-    display: flex;
-    flex-direction: column;
-    text-align: justify;
-}
-
 
  .poder__Wrapper {
     width: 85vw; 
     height: 100%;
     color: black;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
   }
 
 
   .wrongText {
     font-size: 12px;
     margin-bottom: 0;
-    display: none;
-    
+    display: none;    
   }
   
   .wrongText-activo {
@@ -346,20 +366,137 @@
     display:block;
     color: lightsalmon;
   }
+
+  .wrongMessege {
+    font-size: 14px;
+    display: none;
+  }
+
+  .wrongMessege-activo {
+    font-size: 14px;
+    color: red;
+    display: inline-flex;
+  }
+
+  .succesMessege {
+    font-size: 14px;    
+    display: none;
+  }
   
- @media only screen and (max-width: 800px) {
-    form {
-      max-width: 480px;
+  .succesMessege-activo {
+    display: inline-flex;
+    color: #119200;
+  }
+  
+  
+ @media only screen and ( max-width: 800px) {
+    #page1{
+      padding: 0;
+      padding-top: 30%;
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    header {
+      position: absolute;
+    }
+    .lista_Menu{
+      flex-direction: row;
+      width: 100vw;
+      height: 50px;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+      background-color: var(--tradewind-100);
+      color: var(--tradewind-100);
+      transition: width 0;
+      align-items:flex-start;
+      justify-content: space-around;
     }
 
-    #page1 {
+    .lista_Menu:hover {
+      cursor: pointer;
+      width: 100vw;
+    }
+
+    .description_Menu {
+      display: none;
+    }
+
+        .page1__one{
+      width: 100%;
+    }
+
+    .page1__two{
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 25px;
+      line-height: 25px;      
+    }
+  
+    h2 {
+      font-size: 16px;
+      text-align: justify;     
+      line-height: 16px;
+      font-weight: 100;      
+    }
+
+    .content__page2{
+      margin-top: 20px;
+    }
+
+    form {
+      max-width: 400px;
+      height: 100%;
+      margin: 5px auto;
+      padding: 5px 10px;
+      gap: 3px 3px; 
+      
+    } 
+
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="email"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="time"],
+    input[type="url"],
+    textarea,
+    select, 
+    option
+    {
+      width: 80vw
+    }
+    
+    .button, #sendButton, #pdf {    
+      font-size: 10px;
+      text-align: center;
+      font-style: normal;
+      font-weight: 300;
+      width: 60%;     
+    }
+    
+    .buttons {
+      display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      justify-content: space-around;
-      gap: 50px;
-    }  
+      gap: 20px;
+    }
+  }
+
+  @media only screen and ( max-width: 400px) {
+    header, #ListaMenu{
+      display: none;
+    }
+
+    form {
+      max-width: 320px;
+    }
   }
 
