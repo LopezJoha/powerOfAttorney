@@ -102,87 +102,89 @@ const validarCampo = (expresion, input, idgrupo) => {
 const validarFormulario = (e) => {
     switch (e.target.name) {
         case "jurisdiccion":
-            Juzgado = e.target.value
             idgrupo="grupoJuris" 
-            validarCampo(expresiones.texto, e.target, idgrupo)       
+            validarCampo(expresiones.texto, e.target, idgrupo)
+            Juzgado = e.target.value       
         break;   
         
-        case "proceso" :
-            Proceso = e.target.value 
+        case "proceso":            
             idgrupo="grupoProceso"
-            validarCampo(expresiones.texto, e.target, idgrupo)  
+            validarCampo(expresiones.texto, e.target, idgrupo)
+            Proceso = e.target.value   
         break;    
         
-        case "espProceso":
-            EspecialidadProceso= e.target.value 
+        case "espProceso":             
             idgrupo="grupoespProceso"
             validarCampo(expresiones.texto, e.target, idgrupo)  
+            EspecialidadProceso= e.target.value
         break;
         
         case "ciudad": 
-            ciudad = e.target.value
             idgrupo="grupociudad"
-            validarCampo(expresiones.texto, e.target, idgrupo)  
+            validarCampo(expresiones.texto, e.target, idgrupo)
+            ciudad = e.target.value  
         break;
         
-        case "nombreDte":
-            nameDemandante = e.target.value
+        case "nombreDte":            
             idgrupo="gruponombreDte"
-            validarCampo(expresiones.texto, e.target, idgrupo)  
+            validarCampo(expresiones.texto, e.target, idgrupo)
+            nameDemandante = e.target.value  
         break;        
             
-        case "idNumDte":
-            IdDemandante = e.target.value
+        case "idNumDte":            
             idgrupo="grupoidNumDte"
             validarCampo(expresiones.id, e.target, idgrupo)  
+            IdDemandante = e.target.value
         break;
         
-        case "correoDte":
-            EmailDte= e.target.value 
+        case "correoDte":             
             idgrupo="grupocorreoDte"
-            validarCampo(expresiones.correo, e.target, idgrupo)  
+            validarCampo(expresiones.correo, e.target, idgrupo) 
+            EmailDte= e.target.value 
         break;    
         
-        case "nombreDdo":
-            nameDemandado= e.target.value 
+        case "nombreDdo":            
             idgrupo="gruponombreDdo"
-            validarCampo(expresiones.texto, e.target, idgrupo)  
+            validarCampo(expresiones.texto, e.target, idgrupo)
+            nameDemandado= e.target.value   
         break;
         
-        case "idNumDdo":
-            IdDemandado = e.target.value 
+        case "idNumDdo":            
             idgrupo="grupoidNumDdo"
-            validarCampo(expresiones.id, e.target, idgrupo)  
+            validarCampo(expresiones.id, e.target, idgrupo) 
+            IdDemandado = e.target.value  
         break;
         
-        case "correoDdo" :
-            EmailDdo = e.target.value
+        case "correoDdo":            
             idgrupo="grupocorreoDdo"
-            validarCampo(expresiones.correo, e.target, idgrupo)   
+            validarCampo(expresiones.correo, e.target, idgrupo)
+            EmailDdo = e.target.value   
         break;    
         
-        case "nombreAbogado":
-            NombreAbogado = e.target.value
+        case "nombreAbogado":            
             idgrupo="gruponombreAbogado"
-            validarCampo(expresiones.texto, e.target, idgrupo)  
+            validarCampo(expresiones.texto, e.target, idgrupo)
+            NombreAbogado = e.target.value  
         break;
                
-        case "idNumAbogado" :
-            idNumAbogado = e.target.value
+        case "idNumAbogado":
+            
             idgrupo="grupoidNumAbogado"
-            validarCampo(expresiones.id, e.target, idgrupo)  
+            validarCampo(expresiones.id, e.target, idgrupo)
+            idNumAbogado = e.target.value  
         break;
         
-        case "tarjetaProfesional" :
-            tp= e.target.value 
-            idgrupo="grupoTP"
-            validarCampo(expresiones.tp, e.target, idgrupo)  
+        case "tarjetaProfesional":
+            tp= e.target.value            
+            validarCampo(expresiones.tp, e.target, idgrupo) 
+            idgrupo="grupoTP" 
         break;
         
-        case "correoAbogado" :
-            EmailAbogado= e.target.value
+        case "correoAbogado":            
             idgrupo="grupocorreoAbogado"
-            validarCampo(expresiones.correo, e.target, idgrupo)   
+            validarCampo(expresiones.correo, e.target, idgrupo) 
+            EmailAbogado= e.target.value
+              
         break;
     }     
 };
@@ -271,8 +273,8 @@ formulario.addEventListener('submit', (e)=>{
 
             mostrarPoder();
             Capturar();
-            document.getElementById("mostrarDatos").style.visibility="visible";
-            document.getElementById("modal").style.visibility="visible";
+            // document.getElementById("mostrarDatos").style.visibility="visible";
+            document.getElementById("mostrarDatos").style.display="flex";
         }
         else {
             document.getElementById('wrongMessege').classList.add('wrongMessege-activo');
