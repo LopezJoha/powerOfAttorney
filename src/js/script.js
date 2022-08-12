@@ -9,45 +9,47 @@ let nameDemandado; let tipoIdDdo; let IdDemandado; let EmailDdo;
 let NombreAbogado; let idAbogado; let idNumAbogado; let tp; let EmailAbogado;
 
 function mostrarPoder(){
-    document.getElementById('mostrarDatos').innerHTML = PoderGeneral; 
+    document.getElementById('modal').innerHTML = PoderGeneral;
 }
-const Capturar =() =>{    
-    poder = `<div class='poder__Wrapper'><p><b>JUEZ ${Juzgado} REPARTO</b></p><p>${ciudad}.</p><p>E. &nbsp; S.&nbsp; D.</p>      
-    <br>
-    <p>PROCESO: <b>${Proceso}  ${EspecialidadProceso}</b></p>      
-    <p>DEMANDANTE:<b>${nameDemandante}</b></p>
-    <p>IDENTIFICACION DEMANDANTE: <b>${tipoIdDte} No ${IdDemandante}</b></p>
-    <p>DEMANDADO: <b>${nameDemandado}</b></p>
-    <p>IDENTIFICACION DEMANDADO: <b>${tipoIdDdo} No ${IdDemandado}</b></p>   
-    <p>REFERENCIA: <b>PODER</b></p> 
-    <br>
-    <p><b>${nameDemandante}</b>, mayor de edad, Identificado con <b>${tipoIdDte}</b> No <b>${IdDemandante}</b>, 
-    con domicilio y residencia principal en la ${ciudad}, por medio del presente escrito 
-    me permito manifestar a usted muy respetuosamente que confiero PODER ESPECIAL AMPLIO Y SUFICIENTE al Dr 
-    <b>${NombreAbogado}</b>, Identificado con <b>${idAbogado}</b>
-    No <b>${idNumAbogado}</b>, Abogado en ejercicio y portador de la tarjeta profesional No <b>${tp}</b> expedida por el Consejo Superior de la Judicatura, 
-    para que en mi nombre y representación inicie, continue y lleve hasta su culminación PROCESO <b>${Proceso}</b>  <b>${EspecialidadProceso}</b>.</p>
-    <br>
-    <p>Mi apoderado cuenta con las facultades inherentes para el ejercicio del presente poder tales como conciliar,
-    sustituir, transigir, recibir, desistir, suscribir, reasumir, interponer los recursos de Ley, las descritas
-    en los artículos 75 y 77 del Código General del Proceso.</p> 
-    <br>
-    <p>Sírvase señor Juez, reconocerle personería adjetiva para actuar al Dr. <b>${NombreAbogado}</b> en los términos y los fines aquí señalados.</p> 
-    <br>
-    Atentamente,      
-    <br>
-    <p><b>${nameDemandante}</b></p>
-    <p><b>${tipoIdDte}</b> No <b>${IdDemandante}</b></p>
-    <p><b>${EmailDte}</b></p>
-    <br>    
-    <p>Acepto,</p>  
-    <br>
-    <p><b>${NombreAbogado}</b></p>
-    <p><b>${idAbogado}</b> No ${idNumAbogado}</b></p>	
-    <p><b>${tp} del C.S. de la J.</p> </b> 
-    <p><b>${EmailAbogado}</b></p> 
-    </div>`   
+const Capturar =() =>{         
+    poder = `<div class='poder__Wrapper '>
+        <p><b>JUEZ ${Juzgado} REPARTO</b></p><p>${ciudad}.</p><p>E. &nbsp; S.&nbsp; D.</p>  
+        <p>PROCESO: <b>${Proceso}  ${EspecialidadProceso}</b></p>      
+        <p>DEMANDANTE:<b>${nameDemandante}</b></p>
+        <p>IDENTIFICACION DEMANDANTE: <b>${tipoIdDte} No ${IdDemandante}</b></p>
+        <p>DEMANDADO: <b>${nameDemandado}</b></p>
+        <p>IDENTIFICACION DEMANDADO: <b>${tipoIdDdo} No ${IdDemandado}</b></p>   
+        <p>REFERENCIA: <b>PODER</b></p> 
+        
+        <p><b>${nameDemandante}</b>, mayor de edad, Identificado con <b>${tipoIdDte}</b> No <b>${IdDemandante}</b>, 
+        con domicilio y residencia principal en la ${ciudad}, por medio del presente escrito 
+        me permito manifestar a usted muy respetuosamente que confiero PODER ESPECIAL AMPLIO Y SUFICIENTE al Dr 
+        <b>${NombreAbogado}</b>, Identificado con <b>${idAbogado}</b>
+        No <b>${idNumAbogado}</b>, Abogado en ejercicio y portador de la tarjeta profesional No <b>${tp}</b> expedida por el Consejo Superior de la Judicatura, 
+        para que en mi nombre y representación inicie, continue y lleve hasta su culminación PROCESO <b>${Proceso}</b>  <b>${EspecialidadProceso}</b>.</p>
+        
+        <p>Mi apoderado cuenta con las facultades inherentes para el ejercicio del presente poder tales como conciliar,
+        sustituir, transigir, recibir, desistir, suscribir, reasumir, interponer los recursos de Ley, las descritas
+        en los artículos 75 y 77 del Código General del Proceso.</p> 
+        
+        <p>Sírvase señor Juez, reconocerle personería adjetiva para actuar al Dr. <b>${NombreAbogado}</b> en los términos y los fines aquí señalados.</p> 
+        
+        Atentamente,      
+        
+        <p><b>${nameDemandante}</b></p>
+        <p><b>${tipoIdDte}</b> No <b>${IdDemandante}</b></p>
+        <p><b>${EmailDte}</b></p>
+            
+        <p>Acepto,</p>  
+        
+        <p><b>${NombreAbogado}</b></p>
+        <p><b>${idAbogado}</b> No ${idNumAbogado}</b></p>	
+        <p><b>${tp} del C.S. de la J.</p> </b> 
+        <p><b>${EmailAbogado}</b></p> 
+    </div>
+    `   
     PoderGeneral = poder
+
 };
 
 // document.getElementById("sendButton").addEventListener("click", function(e){
@@ -268,6 +270,9 @@ formulario.addEventListener('submit', (e)=>{
 		    }, 3000);
 
             mostrarPoder();
+            Capturar();
+            document.getElementById("mostrarDatos").style.visibility="visible";
+            document.getElementById("modal").style.visibility="visible";
         }
         else {
             document.getElementById('wrongMessege').classList.add('wrongMessege-activo');
